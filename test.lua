@@ -7009,7 +7009,7 @@ end
 if World2 then
 LC:AddDropdown({
 	Name = "Select Island",
-	Default = "Factory",
+	Default = "",
 	Options = {"The Cafe",
     "Frist Spot",
     "Dark Area",
@@ -7057,7 +7057,7 @@ end
 
 LC:AddToggle({
 	Name = "Teleport To Island",
-	Default = true,
+	Default = false,
 	Callback = function(Value)
 		_G.TeleportIsland = Value
         if _G.TeleportIsland == true then
@@ -7111,7 +7111,7 @@ LC:AddToggle({
                 elseif _G.SelectIsland == "Green Zone" then
                     topos( CFrame.new(-2448.5300292969, 73.016105651855, -3210.6306152344))
                 elseif _G.SelectIsland == "Factory" then
-                    topos(CFrame.new(1353.4488525390625, 3.4093551635742188, 1376.9202880859375))
+                    topos(CFrame.new(424.12698364258, 211.16171264648, -427.54049682617))
                 elseif _G.SelectIsland == "Colossuim" then
                     topos( CFrame.new(-1503.6224365234, 219.7956237793, 1369.3101806641))
                 elseif _G.SelectIsland == "Zombie Island" then
@@ -7889,7 +7889,7 @@ local D = Window:MakeTab({
 
 D:AddToggle({
 	Name = "Auto Random Fruits",
-	Default = true,
+	Default = false,
 	Callback = function(Value)
 		_G.Random_Auto = Value
 	end    
@@ -8047,9 +8047,7 @@ spawn(function()
 				end
 				if game:GetService("Players").LocalPlayer.Character:FindFirstChild("Leopard Fruit") or game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("Leopard Fruit") then
 					game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("StoreFruit","Leopard-Leopard",game:GetService("Players").LocalPlayer.Character:FindFirstChild("Leopard Fruit") or game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("Leopard Fruit"))
-                    if game:GetService("Players").LocalPlayer.Character:FindFirstChild("Kitsune Fruit") or game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("Kitsune Fruit") then
-                        game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("StoreFruit","Kitsune-Kitsune",game:GetService("Players").LocalPlayer.Character:FindFirstChild("Kitsune Fruit") or game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("Kitsune Fruit"))
-                end
+				end
 			end)
 		 end
 	   end
@@ -8077,7 +8075,7 @@ end)
 
 D:AddToggle({
 	Name = "Auto Drop Fruit",
-	Default = true,
+	Default = false,
 	Callback = function(Value)
 		_G.DropFruit = Value
 	end    
